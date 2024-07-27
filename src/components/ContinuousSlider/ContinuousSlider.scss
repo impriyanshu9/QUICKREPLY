@@ -1,0 +1,71 @@
+@import '../../Utils/mixins.scss';
+
+.slider-container {
+    width: 100%; // make the container full width for flexibility
+
+    .continuous-slider {
+        width: 100%;
+        margin: 0;
+        -webkit-appearance: none;
+        background: linear-gradient(to right, #1e90ff, #1e90ff) no-repeat, #ddd;
+        border-radius: 4px;
+        outline: none;
+        opacity: 0.7;
+        transition: opacity 0.2s, background-size 0.2s;
+        background-size: 0% 100%;
+        height: 5px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.size-small::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+        }
+
+        &.size-large::-webkit-slider-thumb {
+            width: 22px;
+            height: 22px;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            background: radial-gradient(circle, #1e90ff 40%, #f7f7f7 45%);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &:active {
+                background: radial-gradient(circle, #1e90ff 40%, #f7f7f7 40%);
+                border: 1px solid #1e90ff;
+            }
+        }
+
+        &::-moz-range-thumb {
+            pointer-events: all;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #1e90ff 40%, #f7f7f7 45%);
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s, transform 0.2s;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            &:active {
+                background: radial-gradient(circle, #1e90ff 40%, #f7f7f7 40%);
+                border: 1px solid #1e90ff;
+            }
+        }
+    }
+}

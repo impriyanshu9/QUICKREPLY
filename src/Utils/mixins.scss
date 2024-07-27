@@ -1,0 +1,16 @@
+
+@mixin slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    pointer-events: all;
+    background-image: radial-gradient(circle, #34ad38 40%, #f7f7f7 45%);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+@mixin slider-thumb-active {
+    background-image: radial-gradient(circle, #34ad38 40%, #f7f7f7 40%);
+    border: 1px solid #34ad38;
+}
+

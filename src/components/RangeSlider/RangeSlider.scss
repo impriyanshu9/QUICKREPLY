@@ -1,0 +1,75 @@
+@import '../../Utils/mixins.scss';
+
+.range-slider {
+    position: relative;
+    width: 300px;
+
+    .slider {
+        position: relative;
+        height: 5px;
+        background: #b3d0ff; // Light blue for the track background
+        border-radius: 5px;
+        margin: 20px 0;
+        top: 9px;
+
+        .track {
+            position: absolute;
+            height: 5px;
+            background: #b3d0ff; // Light blue for the track
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .range {
+            position: absolute;
+            height: 5px;
+            background: #1e90ff; // Blue for the range indicator
+            border-radius: 5px;
+        }
+    }
+
+    input[type='range'] {
+        position: absolute;
+        width: 100%;
+        -webkit-appearance: none;
+        background: transparent;
+        pointer-events: none;
+        z-index: 10;
+
+        &.size-small::-webkit-slider-thumb {
+            width: 18px;
+            height: 18px;
+            background: #1e90ff; // Blue thumb for size-small
+        }
+
+        &.size-large::-webkit-slider-thumb {
+            width: 22px;
+            height: 22px;
+            background: #1e90ff; // Blue thumb for size-large
+        }
+
+        &::-webkit-slider-thumb {
+            @include slider-thumb;
+            background: #1e90ff; // Blue thumb background
+
+            &:active {
+                @include slider-thumb-active;
+                background: #1c86ee; // Darker blue when active
+            }
+        }
+    }
+
+    input[type='range']::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background-image: radial-gradient(circle, #1e90ff 40%, #f7f7f7 45%);
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+
+        &:active {
+            background-image: radial-gradient(circle, #1c86ee 40%, #f7f7f7 40%);
+            border: 1px solid #1c86ee; // Darker blue border when active
+        }
+    }
+}
